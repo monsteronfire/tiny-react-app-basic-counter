@@ -3,3 +3,17 @@ body {
   background-color: #3ABEE3;
   color: white;
 }
+
+.basic-counter {
+  background-color: olive;
+}
+
+.step-counter {
+  border: 2px dotted yellow;
+  background-color: yellow;
+  color: black;
+}
+
+.step-counter-two {
+  background-color: salmon;
+}

@@ -29,7 +29,7 @@ class Counter extends React.Component {
 
   render() {
     return (
-      <div className='basic-counter'>
+      <div className='counter'>
         <h1>{this.state.count}</h1>
         <div className='button-wrapper'>
           <button onClick={this.increment}>+</button>

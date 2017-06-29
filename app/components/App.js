@@ -1,5 +1,5 @@
 import React from 'react';
-import Counter from './Counter';
+import BasicCounter from './BasicCounter';
 import StepCounter from './StepCounter';
 import StepCounterTwo from './StepCounterTwo';
 
@@ -7,7 +7,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='container'>
-        <Counter/>
+        <BasicCounter/>
         <StepCounter/>
         <StepCounterTwo/>
       </div>
