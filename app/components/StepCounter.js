@@ -5,31 +5,38 @@ class StepCounter extends React.Component {
     super(props);
     this.state = {
       count: 0,
-      step: 5
+      value: 1
     };
 
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   increment() {
-    this.setState((prev) => {
+    this.setState(() => {
       return {
-        count: prev.count + prev.step
+        count: this.state.count + (parseInt(this.state.value))
       }
     });
   }
 
   decrement() {
-    this.setState((prev) => {
+    this.setState(() => {
       return {
-        count: prev.count - prev.step
+        count: this.state.count - (parseInt(this.state.value))
       }
     });
   }
 
-  setStep() {
-    console.log('set step');
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log('hello');
   }
 
   render() {
@@ -39,8 +46,11 @@ class StepCounter extends React.Component {
         <div className='button-wrapper'>
           <button onClick={this.increment}>+</button>
           <button onClick={this.decrement}>-</button>
-          <input onChange={this.setStep} />
         </div>
+        <form onSubmit={this.handleSubmit}>
+          <input type='number' value={this.state.value} onChange={this.handleChange} />
+          <input type='submit' value='Submit' />
+        </form>
       </div>
     )
   }
