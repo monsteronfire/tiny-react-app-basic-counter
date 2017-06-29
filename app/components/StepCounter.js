@@ -4,7 +4,8 @@ class StepCounter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0
+      count: 0,
+      step: 5
     };
 
     this.increment = this.increment.bind(this);
@@ -14,7 +15,7 @@ class StepCounter extends React.Component {
   increment() {
     this.setState((prev) => {
       return {
-        count: prev.count + 1
+        count: prev.count + prev.step
       }
     });
   }
@@ -22,9 +23,13 @@ class StepCounter extends React.Component {
   decrement() {
     this.setState((prev) => {
       return {
-        count: prev.count -1
+        count: prev.count - prev.step
       }
     });
+  }
+
+  setStep() {
+    console.log('set step');
   }
 
   render() {
@@ -34,8 +39,11 @@ class StepCounter extends React.Component {
         <div className='button-wrapper'>
           <button onClick={this.increment}>+</button>
           <button onClick={this.decrement}>-</button>
+          <input onChange={this.setStep} />
         </div>
       </div>
     )
   }
 }
+
+export default StepCounter;
