@@ -10,9 +10,9 @@ class StepInput extends React.Component {
 
   render() {
     return (
-      <div className='step-input'>
+      <div className='step-input' onSubmit=''>
         <form>
-          <input type='number' />
+          <input type='number' onChange='' />
           <input type='submit' value='Submit' />
         </form>
       </div>
