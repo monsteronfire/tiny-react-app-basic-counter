@@ -10,8 +10,8 @@ class StepCounterTwo extends React.Component {
   render() {
     return (
       <div className='step-counter-two'>
-        <Counter />
-        <StepInput value={this.state.value} />
+        <Counter count={this.props.count} />
+        <StepInput value={this.props.value} />
       </div>
     )
   }
