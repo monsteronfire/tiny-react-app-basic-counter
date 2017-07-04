@@ -1,6 +1,7 @@
 import React from 'react';
 import StepInput from './StepInput';
 import Counter from './Counter';
+import CountButton from './CountButton';
 
 class StepCounterTwo extends React.Component {
   constructor(props) {
@@ -20,9 +21,9 @@ class StepCounterTwo extends React.Component {
   }
 
   increment() {
-    this.setState((prev) => {
+    this.setState(() => {
       return {
-        count: prev.count + 1
+        count: this.state.count + (parseInt(this.state.value))
       }
     });
   }
@@ -30,7 +31,7 @@ class StepCounterTwo extends React.Component {
   decrement() {
     this.setState((prev) => {
       return {
-        count: prev.count -1
+        count: this.state.count - (parseInt(this.state.value))
       }
     });
   }
@@ -39,6 +40,8 @@ class StepCounterTwo extends React.Component {
     return (
       <div className='step-counter-two'>
         <Counter count={this.state.count} />
+        <CountButton sign="+" onClick={this.increment} />
+        <CountButton sign="-" onClick={this.decrement} />
         <StepInput value={this.state.value} onChange={this.handleChange} />
       </div>
     )
