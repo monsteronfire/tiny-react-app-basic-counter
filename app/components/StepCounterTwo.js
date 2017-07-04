@@ -11,10 +11,28 @@ class StepCounterTwo extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
   }
 
   handleChange(event) {
     this.setState({value: event.target.value  });
+  }
+
+  increment() {
+    this.setState((prev) => {
+      return {
+        count: prev.count + 1
+      }
+    });
+  }
+
+  decrement() {
+    this.setState((prev) => {
+      return {
+        count: prev.count -1
+      }
+    });
   }
 
   render() {
